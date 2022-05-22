@@ -1,0 +1,125 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "bionic-reading",
+    "description": "",
+    "contact": {},
+    "version": "1.0"
+  },
+  "jsonSchemaDialect": "https://json-schema.org/draft/2020-12/schema",
+  "servers": [
+    {
+      "url": "https://bionic-reading1.p.rapidapi.com",
+      "variables": {}
+    }
+  ],
+  "paths": {
+    "/convert": {
+      "post": {
+        "tags": [
+          "Post"
+        ],
+        "summary": "Convert",
+        "description": "",
+        "operationId": "Convert",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RequestBody"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {},
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "object",
+                  "contentMediaType": "text/plain"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "parameters": []
+    }
+  },
+  "components": {
+    "schemas": {
+      "RequestBody": {
+        "title": "RequestBody",
+        "required": [
+          "content",
+          "response_type",
+          "request_type",
+          "fixation",
+          "saccade"
+        ],
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "string",
+            "examples": [
+              "Application Programming Interfaces (APIs) have taken the world by storm and are now the de facto standard of software communication. Almost every software product nowadays consumes APIs."
+            ]
+          },
+          "response_type": {
+            "type": "string",
+            "examples": [
+              "html"
+            ]
+          },
+          "request_type": {
+            "type": "string",
+            "examples": [
+              "html"
+            ]
+          },
+          "fixation": {
+            "type": "integer",
+            "contentEncoding": "int32",
+            "examples": [
+              1
+            ]
+          },
+          "saccade": {
+            "type": "integer",
+            "contentEncoding": "int32",
+            "examples": [
+              10
+            ]
+          }
+        },
+        "description": ""
+      }
+    },
+    "securitySchemes": {
+      "Rapidapi-Host": {
+        "type": "apiKey",
+        "name": "X-Rapidapi-Host",
+        "in": "header"
+      },
+      "Rapidapi-Key": {
+        "type": "apiKey",
+        "name": "X-Rapidapi-Key",
+        "in": "header"
+      }
+    }
+  },
+  "security": [
+    {
+      "Rapidapi-Host": [],
+      "Rapidapi-Key": []
+    }
+  ],
+  "tags": []
+}
